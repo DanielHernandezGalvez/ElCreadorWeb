@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ValueSection from '../components/ValueSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import SelectorSection from '../components/SelectorSection.astro';
+import ProcessSection from '../components/ProcessSection.astro';
+import PortfolioSection from '../components/PortfolioSection.astro';
+import TechSection from '../components/TechSection.astro';
+import DifferenceSection from '../components/DifferenceSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import FaqSection from '../components/FaqSection.astro';
+import BlogSection from '../components/BlogSection.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="El Creador Web — Diseño y desarrollo de páginas web profesionales"
+  description="Diseño y desarrollo de páginas web modernas y enfocadas en resultados para emprendedores, profesionistas, PyMEs y empresas. Landing pages, sitios corporativos y tiendas online."
+>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
+
+  <Header />
+
+  <main id="contenido">
+    <HeroSection />
+    <ValueSection />
+    <ServicesSection />
+    <SelectorSection />
+    <ProcessSection />
+    <PortfolioSection />
+    <TechSection />
+    <DifferenceSection />
+    <ContactSection />
+    <FaqSection />
+    <BlogSection />
+    <CtaSection />
+  </main>
+
+  <Footer />
+</Layout>

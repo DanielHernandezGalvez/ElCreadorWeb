@@ -1,0 +1,78 @@
+<section class="py-20 lg:py-28 border-t border-line">
+  <div class="max-w-content mx-auto px-6 lg:px-8">
+    <h2 class="font-display font-700 text-3xl sm:text-4xl tracking-tight text-ink max-w-2xl" data-reveal>
+      ¿Qué tipo de página necesita tu negocio?
+    </h2>
+
+    <div class="mt-12 grid md:grid-cols-5 gap-3" role="group" aria-label="Selector de solución recomendada" data-reveal>
+      <button class="selector-btn" data-result="landing">Necesito conseguir clientes</button>
+      <button class="selector-btn" data-result="corporativo">Necesito presentar mi empresa</button>
+      <button class="selector-btn" data-result="shopify">Quiero vender productos online fácilmente</button>
+      <button class="selector-btn" data-result="woocommerce">Necesito una tienda más personalizada</button>
+      <button class="selector-btn" data-result="no-seguro">No estoy seguro</button>
+    </div>
+
+    <div id="selector-result" class="mt-6 selector-result" hidden data-reveal>
+      <div class="flex items-start justify-between gap-6 flex-wrap">
+        <div>
+          <p class="text-sm text-faint">Te recomendamos</p>
+          <p id="selector-result-title" class="font-display font-700 text-2xl mt-1 text-ink"></p>
+          <p id="selector-result-text" class="mt-2 text-inksoft"></p>
+        </div>
+        <a href="[GOOGLE_FORM_URL]" class="btn-accent whitespace-nowrap">Solicitar cotización →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const selectorWindow = window as Window & { __selectorSectionInitialized?: boolean };
+
+  if (!selectorWindow.__selectorSectionInitialized) {
+    selectorWindow.__selectorSectionInitialized = true;
+
+    const recommendationMap = Object.freeze({
+      landing: {
+        title: 'Landing Page',
+        text: 'Una página enfocada en presentar un servicio, promocionar una oferta o conseguir nuevos contactos. Desde $3,800 MXN.'
+      },
+      corporativo: {
+        title: 'Sitio corporativo',
+        text: 'Una presencia digital completa para presentar tu empresa, servicios, proyectos y formas de contacto. Desde $5,500 MXN.'
+      },
+      shopify: {
+        title: 'Tienda Shopify',
+        text: 'Una tienda online moderna para comenzar a vender productos por internet mediante Shopify. Desde $7,000 MXN.'
+      },
+      woocommerce: {
+        title: 'Tienda WooCommerce',
+        text: 'Una tienda online flexible y personalizable construida con WordPress y WooCommerce. Desde $7,000 MXN.'
+      },
+      'no-seguro': {
+        title: 'Cuéntame sobre tu proyecto',
+        text: 'Sin problema. Cuéntame qué necesita tu negocio y te ayudaré a encontrar la solución adecuada.'
+      }
+    });
+
+    const selectorButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('.selector-btn'));
+    const resultBox = document.getElementById('selector-result');
+    const resultTitle = document.getElementById('selector-result-title');
+    const resultText = document.getElementById('selector-result-text');
+
+    if (selectorButtons.length && resultBox && resultTitle && resultText) {
+      selectorButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          selectorButtons.forEach((item) => item.classList.remove('is-active'));
+          button.classList.add('is-active');
+
+          const data = recommendationMap[button.dataset.result as keyof typeof recommendationMap];
+          if (!data) return;
+
+          resultTitle.textContent = data.title;
+          resultText.textContent = data.text;
+          resultBox.hidden = false;
+        });
+      });
+    }
+  }
+</script>

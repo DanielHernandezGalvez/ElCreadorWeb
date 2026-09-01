@@ -1,0 +1,65 @@
+<footer class="bg-ink text-paper/70">
+  <div class="max-w-content mx-auto px-6 lg:px-8 py-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div class="lg:col-span-2">
+        <p class="font-display font-800 text-xl text-paper">El Creador Web<span class="text-accent">.</span></p>
+        <p class="mt-3 text-sm leading-relaxed max-w-xs">Diseño y desarrollo de páginas web para negocios y empresas.</p>
+      </div>
+
+      <div>
+        <h4 class="text-paper font-semibold text-sm">Servicios</h4>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="#servicios" class="footer-link">Landing Pages</a></li>
+          <li><a href="#servicios" class="footer-link">Sitios corporativos</a></li>
+          <li><a href="#servicios" class="footer-link">Shopify</a></li>
+          <li><a href="#servicios" class="footer-link">WooCommerce</a></li>
+          <li><a href="#servicios" class="footer-link">Mantenimiento</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-paper font-semibold text-sm">Empresa</h4>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="#inicio" class="footer-link">Inicio</a></li>
+          <li><a href="#portafolio" class="footer-link">Portafolio</a></li>
+          <li><a href="#blog" class="footer-link">Blog</a></li>
+          <li><a href="#contacto" class="footer-link">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-paper font-semibold text-sm">Contacto</h4>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          <li><a href="#contacto" class="footer-link">Escríbeme</a></li>
+          <li><a href="#contacto" class="footer-link">WhatsApp</a></li>
+          <li><a href="#contacto" class="footer-link">Instagram</a></li>
+          <li><a href="#contacto" class="footer-link">LinkedIn</a></li>
+          <li><a href="#contacto" class="footer-link">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-paper/10 flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center text-xs text-paper/40">
+      <p>© <span id="year"></span> El Creador Web. Todos los derechos reservados.</p>
+      <div class="flex flex-wrap gap-x-6 gap-y-2">
+        <a href="#" class="hover:text-paper/70 transition-colors">Términos y condiciones</a>
+        <a href="#" class="hover:text-paper/70 transition-colors">Política de privacidad</a>
+        <a href="#" class="hover:text-paper/70 transition-colors">Aviso de privacidad</a>
+        <a href="#" class="hover:text-paper/70 transition-colors">Política de cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const footerWindow = window as Window & { __footerYearInitialized?: boolean };
+
+  if (!footerWindow.__footerYearInitialized) {
+    footerWindow.__footerYearInitialized = true;
+
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+      yearElement.textContent = String(new Date().getFullYear());
+    }
+  }
+</script>

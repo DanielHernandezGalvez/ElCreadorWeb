@@ -1,0 +1,88 @@
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 border-b border-transparent transition-all duration-300">
+  <div class="max-w-content mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-[72px]">
+      <a href="#inicio" class="flex items-center" aria-label="El Creador Web — inicio">
+        <img src="/logo.png" alt="El Creador Web" class="h-9 w-auto" />
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-9 font-medium text-[15px] text-inksoft" aria-label="Navegación principal">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#portafolio" class="nav-link">Portafolio</a>
+        <a href="#blog" class="nav-link">Blog</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="hidden lg:block">
+        <a href="[GOOGLE_FORM_URL]" class="btn-accent">Solicitar cotización</a>
+      </div>
+
+      <button id="menu-toggle" class="lg:hidden flex flex-col justify-center gap-[5px] w-10 h-10 -mr-2" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="menu-bar block h-[2px] w-6 bg-ink transition-transform duration-300"></span>
+        <span class="menu-bar block h-[2px] w-6 bg-ink transition-opacity duration-300"></span>
+        <span class="menu-bar block h-[2px] w-6 bg-ink transition-transform duration-300"></span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-paper border-b border-line">
+    <nav class="flex flex-col px-6 py-6 gap-1 font-medium text-ink" aria-label="Navegación móvil">
+      <a href="#inicio" class="mobile-link">Inicio</a>
+      <a href="#servicios" class="mobile-link">Servicios</a>
+      <a href="#portafolio" class="mobile-link">Portafolio</a>
+      <a href="#blog" class="mobile-link">Blog</a>
+      <a href="#contacto" class="mobile-link">Contacto</a>
+      <a href="[GOOGLE_FORM_URL]" class="btn-accent w-full text-center justify-center mt-4">Solicitar cotización</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (header) {
+    const updateHeaderState = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 12);
+    };
+
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    updateHeaderState();
+  }
+
+  if (menuToggle && mobileMenu) {
+    const closeMenu = () => {
+      menuToggle.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Abrir menú');
+      mobileMenu.style.maxHeight = '0px';
+    };
+
+    const openMenu = () => {
+      menuToggle.classList.add('is-open');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      menuToggle.setAttribute('aria-label', 'Cerrar menú');
+      mobileMenu.style.maxHeight = `${mobileMenu.scrollHeight}px`;
+    };
+
+    menuToggle.addEventListener('click', () => {
+      if (menuToggle.classList.contains('is-open')) {
+        closeMenu();
+        return;
+      }
+
+      openMenu();
+    });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        closeMenu();
+      }
+    });
+  }
+</script>
