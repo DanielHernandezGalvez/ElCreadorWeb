@@ -1,43 +1,26 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import HeroSection from '../components/HeroSection.astro';
-import ValueSection from '../components/ValueSection.astro';
-import ServicesSection from '../components/ServicesSection.astro';
-import SelectorSection from '../components/SelectorSection.astro';
-import ProcessSection from '../components/ProcessSection.astro';
-import PortfolioSection from '../components/PortfolioSection.astro';
-import TechSection from '../components/TechSection.astro';
-import DifferenceSection from '../components/DifferenceSection.astro';
-import ContactSection from '../components/ContactSection.astro';
-import FaqSection from '../components/FaqSection.astro';
-import BlogSection from '../components/BlogSection.astro';
-import CtaSection from '../components/CtaSection.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/home/Hero.astro";
+import Services from "../components/home/Services.astro";
+import Portfolio from "../components/home/Portfolio.astro";
+import Testimonials from "../components/home/Testimonials.astro";
+import FAQ from "../components/home/FAQ.astro";
+import Pricing from "../components/home/Pricing.astro";
+import Contact from "../components/home/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout
-  title="El Creador Web — Diseño y desarrollo de páginas web profesionales"
-  description="Diseño y desarrollo de páginas web modernas y enfocadas en resultados para emprendedores, profesionistas, PyMEs y empresas. Landing pages, sitios corporativos y tiendas online."
->
-  <a href="#contenido" class="skip-link">Saltar al contenido</a>
-
+<BaseLayout>
   <Header />
-
-  <main id="contenido">
-    <HeroSection />
-    <ValueSection />
-    <ServicesSection />
-    <SelectorSection />
-    <ProcessSection />
-    <PortfolioSection />
-    <TechSection />
-    <DifferenceSection />
-    <ContactSection />
-    <FaqSection />
-    <BlogSection />
-    <CtaSection />
+  <main>
+    <Hero />
+    <Services />
+    <Portfolio />
+    <Testimonials />
+    <FAQ />
+    <Pricing />
+    <Contact />
   </main>
-
   <Footer />
-</Layout>
+</BaseLayout>

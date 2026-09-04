@@ -1,0 +1,93 @@
+---
+const faqs = [
+  {
+    question: "¿Qué incluye cada servicio?",
+    answer:
+      "Cada proyecto incluye diseño personalizado, desarrollo responsive y una estructura optimizada para que tu sitio funcione correctamente en computadoras, tablets y celulares. El alcance exacto depende del servicio contratado y se define antes de comenzar.",
+  },
+  {
+    question: "¿Qué no incluye el precio?",
+    answer:
+      "El precio base no incluye servicios o funcionalidades que estén fuera del alcance acordado, como desarrollos personalizados, integraciones especiales, contenido profesional, fotografía, publicidad o herramientas externas con costo.",
+  },
+  {
+    question: "¿Cómo funciona el proceso de pago?",
+    answer:
+      "Para comenzar el proyecto se solicita un anticipo del 50%. El 50% restante se liquida antes de publicar el sitio en producción. De esta manera ambas partes tienen claridad sobre el proceso desde el inicio.",
+  },
+  {
+    question: "¿Qué incluye el mantenimiento?",
+    answer:
+      "El mantenimiento puede incluir actualizaciones, pequeños ajustes de contenido, revisión general del sitio y soporte técnico. El alcance depende del plan contratado y los cambios de mayor complejidad se cotizan por separado.",
+  },
+  {
+    question: "¿Puedo añadir funcionalidades después?",
+    answer:
+      "Sí. El sitio puede evolucionar con el tiempo. Podemos agregar nuevas secciones, formularios, integraciones, automatizaciones, sistemas de pago u otras funcionalidades según las necesidades del negocio.",
+  },
+  {
+    question: "¿Cuánto tarda en estar listo mi sitio?",
+    answer:
+      "El tiempo depende del tipo de proyecto, su contenido y la cantidad de funcionalidades necesarias. Antes de comenzar recibirás una estimación clara del tiempo de desarrollo.",
+  },
+];
+---
+
+<section class="bg-[#FAFBFC] py-24 text-[#0E1620]">
+  <div class="mx-auto max-w-4xl px-6">
+
+    <!-- Encabezado -->
+    <div class="text-center">
+
+      <span
+        class="inline-flex rounded-full border border-[#E7D117] bg-[#E7D117]/10 px-4 py-2 text-sm font-medium"
+      >
+        Preguntas frecuentes
+      </span>
+
+      <h2 class="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
+        Todo claro
+        <span class="text-[#C5A900]"> desde el principio</span>
+      </h2>
+
+      <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#0E1620]/60">
+        Algunas de las preguntas más comunes antes de comenzar un proyecto.
+      </p>
+
+    </div>
+
+    <!-- FAQ -->
+    <div class="mt-14 space-y-4">
+
+      {
+        faqs.map((faq, index) => (
+          <details
+            class="group rounded-2xl border border-[#0E1620]/10 bg-white transition hover:border-[#E7D117]/60"
+            open={index === 0}
+          >
+            <summary
+              class="flex cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 font-semibold"
+            >
+              <span>{faq.question}</span>
+
+              <span
+                class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E7D117]/15 text-[#0E1620] transition-transform duration-300 group-open:rotate-45"
+                aria-hidden="true"
+              >
+                +
+              </span>
+            </summary>
+
+            <div class="px-6 pb-6">
+              <p class="max-w-3xl leading-7 text-[#0E1620]/60">
+                {faq.answer}
+              </p>
+            </div>
+          </details>
+        ))
+      }
+
+    </div>
+
+  </div>
+</section>

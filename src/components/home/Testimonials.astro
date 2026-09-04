@@ -1,0 +1,99 @@
+---
+const testimonials = [
+  {
+    quote:
+      "El proceso fue muy claro desde el principio. El resultado superó nuestras expectativas y ahora tenemos una presencia digital mucho más profesional.",
+    name: "Nombre del cliente",
+    role: "Empresa / Puesto",
+  },
+  {
+    quote:
+      "La comunicación durante el proyecto fue excelente y cada ajuste se realizó de forma rápida. Definitivamente volveríamos a trabajar juntos.",
+    name: "Nombre del cliente",
+    role: "Empresa / Puesto",
+  },
+  {
+    quote:
+      "Buscábamos algo profesional y fácil de administrar. Recibimos exactamente lo que necesitábamos y además entendimos mucho mejor cómo aprovechar nuestro sitio.",
+    name: "Nombre del cliente",
+    role: "Empresa / Puesto",
+  },
+];
+---
+
+<section class="bg-[#0E1620] py-24">
+  <div class="mx-auto max-w-7xl px-6">
+
+    <!-- Encabezado -->
+    <div class="mx-auto max-w-2xl text-center">
+
+      <span
+        class="inline-flex rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm font-medium text-[#F5E98A]"
+      >
+        Testimonios
+      </span>
+
+      <h2 class="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
+        La experiencia también
+        <span class="text-[#E7D117]"> importa</span>
+      </h2>
+
+      <p class="mt-6 text-lg leading-8 text-white/55">
+        Un buen proyecto no termina cuando se publica. También importa
+        cómo se vive el proceso.
+      </p>
+
+    </div>
+
+    <!-- Testimonios -->
+    <div class="mt-14 grid gap-6 lg:grid-cols-3">
+
+      {
+        testimonials.map((testimonial) => (
+          <article
+            class="relative rounded-3xl border border-white/10 bg-[#19232F] p-8"
+          >
+
+            <!-- Comillas -->
+            <div
+              class="text-5xl font-serif leading-none text-[#E7D117]/40"
+              aria-hidden="true"
+            >
+              “
+            </div>
+
+            <blockquote class="mt-4 leading-7 text-white/70">
+              {testimonial.quote}
+            </blockquote>
+
+            <!-- Estrellas -->
+            <div
+              class="mt-7 flex gap-1 text-[#E7D117]"
+              aria-label="5 de 5 estrellas"
+            >
+              <span aria-hidden="true">★</span>
+              <span aria-hidden="true">★</span>
+              <span aria-hidden="true">★</span>
+              <span aria-hidden="true">★</span>
+              <span aria-hidden="true">★</span>
+            </div>
+
+            <!-- Cliente -->
+            <div class="mt-6 border-t border-white/10 pt-5">
+              <p class="font-semibold text-white">
+                {testimonial.name}
+              </p>
+
+              <p class="mt-1 text-sm text-white/40">
+                {testimonial.role}
+              </p>
+            </div>
+
+          </article>
+        ))
+      }
+
+    </div>
+
+  </div>
+</section>
