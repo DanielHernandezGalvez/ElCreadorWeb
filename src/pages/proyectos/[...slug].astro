@@ -1,0 +1,224 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project: CollectionEntry<"projects">) => ({
+    params: {
+      slug: project.id,
+    },
+    props: {
+      project,
+    },
+  }));
+}
+
+const { project } = Astro.props as {
+  project: CollectionEntry<"projects">;
+};
+
+const { Content } = await render(project);
+
+const {
+  title,
+  description,
+  category,
+  type,
+  technologies,
+  thumbnail,
+  youtubeId,
+} = project.data;
+---
+
+<BaseLayout
+  title={`${title} | El Creador Web`}
+  description={description}
+  image={thumbnail}
+  canonical={`/proyectos/${project.id}/`}
+>
+  <Header />
+
+  <main>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-[#0E1620] pt-32 pb-20">
+      <div
+        class="absolute inset-0 opacity-40"
+        aria-hidden="true"
+      >
+        <div
+          class="absolute inset-0"
+          style="
+            background-image:
+              linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+            background-size: 60px 60px;
+          "
+        ></div>
+      </div>
+
+      <div
+        class="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E7D117]/10 blur-3xl"
+        aria-hidden="true"
+      ></div>
+
+      <div
+        class="relative z-10 mx-auto max-w-5xl px-6 text-center"
+      >
+        <div
+          class="mb-6 inline-flex items-center rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm text-[#F5E98A]"
+        >
+          <span class="mr-2 h-2 w-2 rounded-full bg-[#E7D117]"></span>
+          {category}
+        </div>
+
+        <p class="mb-4 text-sm uppercase tracking-[0.2em] text-white/40">
+          {type}
+        </p>
+
+        <h1
+          class="text-5xl font-bold tracking-tight md:text-7xl"
+        >
+          {title}
+        </h1>
+
+        <p
+          class="mx-auto mt-8 max-w-2xl text-lg leading-8 text-white/60 md:text-xl"
+        >
+          {description}
+        </p>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          {
+            technologies.map((technology: string) => (
+              <span
+                class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60"
+              >
+                {technology}
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Imagen principal -->
+    <section class="bg-[#FAFBFC] py-16">
+      <div class="mx-auto max-w-6xl px-6">
+        <div
+          class="overflow-hidden rounded-3xl border border-black/5 bg-white shadow-2xl"
+        >
+          <img
+            src={thumbnail}
+            alt={`Proyecto ${title}`}
+            class="block w-full"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenido -->
+    <section class="bg-[#FAFBFC] pb-24 text-[#0E1620]">
+      <div class="mx-auto max-w-3xl px-6">
+        <article class="project-content">
+          <Content />
+        </article>
+      </div>
+    </section>
+
+    <!-- Video -->
+    {
+      youtubeId && (
+        <section class="bg-[#0E1620] py-24">
+          <div class="mx-auto max-w-5xl px-6">
+            <div class="mb-10 text-center">
+              <p class="text-sm uppercase tracking-[0.2em] text-[#E7D117]">
+                Desarrollo
+              </p>
+
+              <h2 class="mt-3 text-3xl font-bold md:text-4xl">
+                Mira el proyecto en acción
+              </h2>
+            </div>
+
+            <div class="aspect-video overflow-hidden rounded-3xl bg-black shadow-2xl">
+              <iframe
+                class="h-full w-full"
+                src={`https://www.youtube.com/embed/${youtubeId}`}
+                title={`Video del proyecto ${title}`}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+    <!-- CTA -->
+    <section class="bg-[#FAFBFC] py-24 text-[#0E1620]">
+      <div class="mx-auto max-w-3xl px-6 text-center">
+        <p class="text-sm uppercase tracking-[0.2em] text-[#B5A300]">
+          ¿Tienes un proyecto?
+        </p>
+
+        <h2 class="mt-4 text-4xl font-bold md:text-5xl">
+          Hagamos algo para tu negocio
+        </h2>
+
+        <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-black/60">
+          Cuéntame qué necesitas y podemos encontrar la mejor solución
+          para llevar tu negocio a internet.
+        </p>
+
+        <a
+          href="/contacto/"
+          class="mt-8 inline-flex rounded-full bg-[#E7D117] px-7 py-3.5 font-semibold text-[#0E1620] transition hover:bg-[#F3DE4A]"
+        >
+          Hablemos de tu proyecto
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .project-content :global(h2) {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.875rem;
+    font-weight: 700;
+  }
+
+  .project-content :global(h3) {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .project-content :global(p) {
+    margin-bottom: 1.25rem;
+    color: rgb(14 22 32 / 0.65);
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .project-content :global(ul) {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+    color: rgb(14 22 32 / 0.65);
+  }
+
+  .project-content :global(li) {
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+  }
+</style>

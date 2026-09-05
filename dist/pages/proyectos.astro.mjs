@@ -1,6 +1,5 @@
-import { c as createComponent, r as renderTemplate } from '../chunks/astro/server_xhueuU_4.mjs';
+import { c as createComponent, r as renderTemplate } from '../chunks/astro/server_DshsLSAD.mjs';
 import 'piccolore';
-import 'html-escaper';
 import 'clsx';
 export { renderers } from '../renderers.mjs';
 

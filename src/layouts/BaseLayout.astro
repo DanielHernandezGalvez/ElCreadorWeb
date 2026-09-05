@@ -1,35 +1,34 @@
 ---
 import "../styles/global.css";
+import SEO from "../components/SEO.astro";
 
 interface Props {
   title?: string;
   description?: string;
+  canonical?: string;
+  image?: string;
+  noindex?: boolean;
 }
 
 const {
   title = "El Creador Web · Agencia Digital en México",
-  description = "Creamos landing pages, tiendas online y sitios corporativos que convierten."
+  description = "Creamos landing pages, tiendas online y sitios corporativos que convierten.",
+  canonical,
+  image,
+  noindex = false,
 } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es-MX">
   <head>
-    <meta charset="UTF-8" />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonical}
+      image={image}
+      noindex={noindex}
     />
-
-    <meta
-      name="description"
-      content={description}
-    />
-
-    <title>{title}</title>
-
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
 
   <body class="bg-[#0E1620] text-[#FAFBFC] antialiased">

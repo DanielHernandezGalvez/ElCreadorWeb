@@ -1,34 +1,9 @@
-import { a as createAstro, c as createComponent, b as addAttribute, d as renderHead, e as renderSlot, r as renderTemplate, m as maybeRenderHead, f as renderScript, g as renderComponent } from '../chunks/astro/server_xhueuU_4.mjs';
+import { c as createComponent, m as maybeRenderHead, a as renderScript, r as renderTemplate, b as addAttribute, d as renderComponent } from '../chunks/astro/server_DshsLSAD.mjs';
 import 'piccolore';
-import 'html-escaper';
+import { $ as $$BaseLayout, a as $$Header, b as $$Footer } from '../chunks/Footer_CVl1JOO9.mjs';
 import 'clsx';
 /* empty css                                 */
 export { renderers } from '../renderers.mjs';
-
-const $$Astro = createAstro("https://www.elcreadorweb.mx/");
-const $$BaseLayout = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
-  Astro2.self = $$BaseLayout;
-  const {
-    title = "El Creador Web \xB7 Agencia Digital en M\xE9xico",
-    description = "Creamos landing pages, tiendas online y sitios corporativos que convierten."
-  } = Astro2.props;
-  return renderTemplate`<html lang="es-MX"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description"${addAttribute(description, "content")}><title>${title}</title><link rel="icon" type="image/svg+xml" href="/favicon.svg">${renderHead()}</head> <body class="bg-[#0E1620] text-[#FAFBFC] antialiased"> ${renderSlot($$result, $$slots["default"])} </body></html>`;
-}, "C:/Users/herna/OneDrive/Documents/creadorweb/_negocio/ElCreadorWeb/src/layouts/BaseLayout.astro", void 0);
-
-const $$Header = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<header class="fixed inset-x-0 top-0 z-50" data-astro-cid-3ef6ksr2> <div class="mx-auto max-w-7xl px-4 py-3 sm:px-6 sm:py-4" data-astro-cid-3ef6ksr2> <nav class="relative rounded-3xl border border-white/10 bg-[#0E1620]/80 px-5 py-3 backdrop-blur-md md:rounded-full" aria-label="Navegación principal" data-astro-cid-3ef6ksr2> <div class="flex items-center justify-between" data-astro-cid-3ef6ksr2> <img src="/images/logo.png" alt="El Creador Web" class="h-8 w-auto" data-astro-cid-3ef6ksr2> <div class="hidden items-center gap-8 md:flex" data-astro-cid-3ef6ksr2> <a href="/#servicios" class="text-sm text-white/70 transition hover:text-white" data-astro-cid-3ef6ksr2>
-Servicios
-</a> <a href="/#proyectos" class="text-sm text-white/70 transition hover:text-white" data-astro-cid-3ef6ksr2>
-Proyectos
-</a> <a href="/blog/" class="text-sm text-white/70 transition hover:text-white" data-astro-cid-3ef6ksr2>
-Blog
-</a> <a href="/sobre-mi/" class="text-sm text-white/70 transition hover:text-white" data-astro-cid-3ef6ksr2>
-Sobre mí
-</a> <a href="/contacto/" class="rounded-full bg-[#E7D117] px-5 py-2.5 text-sm font-semibold text-[#0E1620] transition hover:bg-[#F3DE4A]" data-astro-cid-3ef6ksr2>
-Contactar
-</a> </div> <button class="menu-toggle flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-[#E7D117] hover:text-[#E7D117] md:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú de navegación" data-menu-toggle data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> <span data-astro-cid-3ef6ksr2></span> </button> </div> <div id="mobile-menu" class="mobile-menu grid md:hidden" data-mobile-menu data-astro-cid-3ef6ksr2> <div class="overflow-hidden" data-astro-cid-3ef6ksr2> <div class="border-t border-white/10 pb-2 pt-4 mt-4" data-astro-cid-3ef6ksr2> <div class="flex flex-col gap-1" data-astro-cid-3ef6ksr2> <a href="/#servicios" class="mobile-link" data-astro-cid-3ef6ksr2>Servicios</a> <a href="/#proyectos" class="mobile-link" data-astro-cid-3ef6ksr2>Proyectos</a> <a href="/blog/" class="mobile-link" data-astro-cid-3ef6ksr2>Blog</a> <a href="/sobre-mi/" class="mobile-link" data-astro-cid-3ef6ksr2>Sobre mí</a> <a href="/contacto/" class="mt-3 rounded-full bg-[#E7D117] px-5 py-3 text-center text-sm font-semibold text-[#0E1620] transition hover:bg-[#F3DE4A]" data-astro-cid-3ef6ksr2>Contactar</a> </div> </div> </div> </div> </nav> </div> </header>  ${renderScript($$result, "C:/Users/herna/OneDrive/Documents/creadorweb/_negocio/ElCreadorWeb/src/components/Header.astro?astro&type=script&index=0&lang.ts")}`;
-}, "C:/Users/herna/OneDrive/Documents/creadorweb/_negocio/ElCreadorWeb/src/components/Header.astro", void 0);
 
 const $$Hero = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<section class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0E1620] pt-10" data-astro-cid-ewxirvlt> <!-- Fondo --> <div class="absolute inset-0 opacity-40" aria-hidden="true" data-astro-cid-ewxirvlt> <div class="absolute inset-0" style="
@@ -42,7 +17,7 @@ Sistemas especializados en conversión
 Diseñamos el
 <span class="text-[#E7D117]" data-astro-cid-ewxirvlt> futuro digital</span>
 de tu negocio
-</h1> <p class="mt-8 max-w-2xl text-lg leading-8 text-white/65 md:text-xl" data-astro-cid-ewxirvlt>
+</h1> <p class="mt-8 max-w-2xl text-lg leading-8 text-white/65 md:text-xl mx-auto" data-astro-cid-ewxirvlt>
 Landing pages, tiendas online y sitios corporativos que no solo
         se ven bien, generan resultados.
 </p> <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row" data-astro-cid-ewxirvlt> <a href="#servicios" class="rounded-full bg-[#E7D117] px-7 py-3.5 text-center font-semibold text-[#0E1620] transition hover:bg-[#F3DE4A]" data-astro-cid-ewxirvlt>
@@ -91,9 +66,9 @@ const $$Services = createComponent(($$result, $$props, $$slots) => {
       ]
     }
   ];
-  return renderTemplate`${maybeRenderHead()}<section id="servicios" class="bg-[#FAFBFC] py-24 text-[#0E1620]"> <div class="mx-auto max-w-7xl px-6"> <!-- Encabezado --> <div class="max-w-2xl mx-auto"> <!-- Etiqueta centrada --> <span class="mx-auto flex w-fit rounded-full border border-[#E7D117] bg-[#E7D117]/10 px-4 py-2 text-center text-sm font-medium text-[#0E1620]">
+  return renderTemplate`${maybeRenderHead()}<section id="servicios" aria-labelledby="servicios-title" class="bg-[#FAFBFC] py-24 text-[#0E1620]"> <div class="mx-auto max-w-7xl px-6"> <!-- Encabezado --> <div class="max-w-2xl mx-auto"> <!-- Etiqueta centrada --> <span class="mx-auto flex w-fit rounded-full border border-[#E7D117] bg-[#E7D117]/10 px-4 py-2 text-center text-sm font-medium text-[#0E1620]">
 Servicios
-</span> <h2 class="mt-6 text-4xl font-bold tracking-tight md:text-5xl text-center">
+</span> <h2 id="servicios-title" class="mt-6 text-4xl font-bold tracking-tight md:text-5xl text-center">
 Soluciones digitales
 <span class="text-[#C5A900]"> pensadas para crecer</span> </h2> <p class="mt-6 text-lg leading-8 text-[#0E1620]/60 text-center">
 Desarrollo sitios web profesionales, rápidos y enfocados en
@@ -111,7 +86,7 @@ También podemos desarrollar funcionalidades a medida.
 </h3> <p class="mt-3 max-w-2xl text-white/55">
 Integraciones, formularios avanzados, automatizaciones,
             funcionalidades personalizadas y otras necesidades específicas.
-</p> </div> <a href="/contacto/" class="shrink-0 rounded-full bg-[#E7D117] px-6 py-3 font-semibold text-[#0E1620] transition hover:bg-[#F3DE4A]">
+</p> </div> <a href="/contacto/" class="shrink-0 rounded-full bg-[#E7D117] px-6 py-3 font-semibold text-[#0E1620] transition hover:bg-[#F3DE4A] text-center">
 Cuéntame tu proyecto
 </a> </div> </div> </div> </section>`;
 }, "C:/Users/herna/OneDrive/Documents/creadorweb/_negocio/ElCreadorWeb/src/components/home/Services.astro", void 0);
@@ -119,30 +94,30 @@ Cuéntame tu proyecto
 const $$Portfolio = createComponent(($$result, $$props, $$slots) => {
   const projects = [
     {
-      title: "Mundiflor",
-      category: "Landing Page \xB7 Florer\xEDa",
-      description: "Landing page enfocada en presentar la marca, sus productos y facilitar el contacto con clientes.",
-      image: "/images/proyectos/mundiflor.webp",
-      href: "/proyectos/mundiflor/"
+      title: "Kurajiyu Matcha",
+      category: "Landing Page \xB7 Venta de Matcha",
+      description: "Landing page enfocada en presentar matcha y facilitar el contacto con clientes.",
+      image: "/images/proyectos/kurajiyumatcha.webp",
+      href: "#"
     },
     {
-      title: "Voz 21",
-      category: "Sitio Corporativo \xB7 Locutores",
-      description: "Sitio web corporativo dise\xF1ado para presentar servicios, talento y propuesta de valor.",
-      image: "/images/proyectos/voz21.webp",
-      href: "/proyectos/voz21/"
+      title: "Guardalo T\xFA",
+      category: "Sitio Corporativo \xB7 Bodega",
+      description: "Sitio web corporativo dise\xF1ado para renta y cotizaci\xF3n de bodegas.",
+      image: "/images/proyectos/bodegaguardalotu.webp",
+      href: "#"
     },
     {
-      title: "Tienda de Ropa",
+      title: "Rashidi",
       category: "Ecommerce \xB7 WooCommerce",
-      description: "Tienda online con cat\xE1logo de productos y una experiencia de compra adaptada a dispositivos m\xF3viles.",
-      image: "/images/proyectos/tienda-ropa.webp",
-      href: "/proyectos/tienda-ropa/"
+      description: "Tienda online con cat\xE1logo de productos de autor con drops limitados.",
+      image: "/images/proyectos/rashidi.webp",
+      href: "#"
     }
   ];
-  return renderTemplate`${maybeRenderHead()}<section id="proyectos" class="bg-[#0E1620] py-24"> <div class="mx-auto max-w-7xl px-6"> <!-- Encabezado --> <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end"> <div class="max-w-2xl mx-auto"> <span class="mx-auto flex w-fit rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm font-medium text-[#F5E98A]">
+  return renderTemplate`${maybeRenderHead()}<section id="proyectos" aria-labelledby="proyectos-title" class="bg-[#0E1620] py-24"> <div class="mx-auto max-w-7xl px-6"> <!-- Encabezado --> <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end"> <div class="max-w-2xl mx-auto"> <span class="mx-auto flex w-fit rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm font-medium text-[#F5E98A]">
 Proyectos
-</span> <h2 class="mt-6 text-4xl font-bold tracking-tight md:text-5xl text-center">
+</span> <h2 id="proyectos-title" class="mt-6 text-4xl font-bold tracking-tight md:text-5xl text-center">
 Trabajo que habla
 <span class="text-[#E7D117]"> por sí mismo</span> </h2> <p class="mt-6 text-lg leading-8 text-white/55 text-center">
 Algunos de los proyectos que he desarrollado para ayudar a
@@ -180,9 +155,9 @@ const $$Testimonials = createComponent(($$result, $$props, $$slots) => {
       role: "Empresa / Puesto"
     }
   ];
-  return renderTemplate`${maybeRenderHead()}<section class="bg-[#0E1620] py-24"> <div class="mx-auto max-w-7xl px-6"> <!-- Encabezado --> <div class="mx-auto max-w-2xl text-center"> <span class="inline-flex rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm font-medium text-[#F5E98A]">
+  return renderTemplate`${maybeRenderHead()}<section aria-labelledby="testimonios-title" class="bg-[#0E1620] py-24"> <div class="mx-auto max-w-7xl px-6"> <!-- Encabezado --> <div class="mx-auto max-w-2xl text-center"> <span class="inline-flex rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm font-medium text-[#F5E98A]">
 Testimonios
-</span> <h2 class="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
+</span> <h2 id="testimonios-title" class="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
 La experiencia también
 <span class="text-[#E7D117]"> importa</span> </h2> <p class="mt-6 text-lg leading-8 text-white/55">
 Un buen proyecto no termina cuando se publica. También importa
@@ -219,9 +194,9 @@ const $$FAQ = createComponent(($$result, $$props, $$slots) => {
       answer: "El tiempo depende del tipo de proyecto, su contenido y la cantidad de funcionalidades necesarias. Antes de comenzar recibir\xE1s una estimaci\xF3n clara del tiempo de desarrollo."
     }
   ];
-  return renderTemplate`${maybeRenderHead()}<section class="bg-[#FAFBFC] py-24 text-[#0E1620]"> <div class="mx-auto max-w-4xl px-6"> <!-- Encabezado --> <div class="text-center"> <span class="inline-flex rounded-full border border-[#E7D117] bg-[#E7D117]/10 px-4 py-2 text-sm font-medium">
+  return renderTemplate`${maybeRenderHead()}<section aria-labelledby="faq-title" class="bg-[#FAFBFC] py-24 text-[#0E1620]"> <div class="mx-auto max-w-4xl px-6"> <!-- Encabezado --> <div class="text-center"> <span class="inline-flex rounded-full border border-[#E7D117] bg-[#E7D117]/10 px-4 py-2 text-sm font-medium">
 Preguntas frecuentes
-</span> <h2 class="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
+</span> <h2 id="faq-title" class="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
 Todo claro
 <span class="text-[#C5A900]"> desde el principio</span> </h2> <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#0E1620]/60">
 Algunas de las preguntas más comunes antes de comenzar un proyecto.
@@ -272,91 +247,70 @@ const $$Pricing = createComponent(($$result, $$props, $$slots) => {
       featured: false
     }
   ];
-  return renderTemplate`${maybeRenderHead()}<section class="bg-[#0E1620] py-24"> <div class="mx-auto max-w-7xl px-6"> <!-- Encabezado --> <div class="mx-auto max-w-2xl text-center"> <span class="inline-flex rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm font-medium text-[#F5E98A]">
+  return renderTemplate`${maybeRenderHead()}<section id="pricing" aria-labelledby="pricing-title" class="bg-[#0E1620] py-24"> <div class="mx-auto max-w-7xl px-6"> <!-- Encabezado --> <div class="mx-auto max-w-2xl text-center"> <span class="inline-flex rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm font-medium text-[#F5E98A]">
 Inversión
-</span> <h2 class="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
+</span> <h2 id="pricing-title" class="mt-6 text-4xl font-bold tracking-tight md:text-5xl">
 Precios
 <span class="text-[#E7D117]"> transparentes</span> </h2> <p class="mt-6 text-lg leading-8 text-white/55">
-Una estructura clara para que sepas desde el principio qué
-        estás contratando y cuánto vas a invertir.
+Una estructura clara para que sepas desde el principio qué estás
+        contratando y cuánto vas a invertir.
 </p> </div> <!-- Planes --> <div class="mt-14 grid gap-6 lg:grid-cols-3"> ${plans.map((plan) => renderTemplate`<article${addAttribute([
     "relative flex flex-col rounded-3xl border p-8",
     plan.featured ? "border-[#E7D117] bg-[#19232F] shadow-[0_0_50px_rgba(231,209,23,0.08)]" : "border-white/10 bg-[#19232F]"
   ], "class:list")}> ${plan.featured && renderTemplate`<span class="absolute right-6 top-6 rounded-full bg-[#E7D117] px-3 py-1 text-xs font-bold text-[#0E1620]">
 Más elegido
-</span>`} <p class="text-sm font-medium text-[#E7D117]"> ${plan.name} </p> <div class="mt-5"> <span class="text-4xl font-bold text-white"> ${plan.price} </span> <span class="ml-2 text-sm text-white/40">
-MXN
-</span> </div> <p class="mt-5 min-h-14 leading-7 text-white/55"> ${plan.description} </p> <div class="my-7 h-px bg-white/10"></div> <ul class="space-y-4"> ${plan.features.map((feature) => renderTemplate`<li class="flex items-start gap-3 text-sm text-white/70"> <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E7D117] text-xs font-bold text-[#0E1620]" aria-hidden="true">
+</span>`} <p class="text-sm font-medium text-[#E7D117]">${plan.name}</p> <div class="mt-5"> <span class="text-4xl font-bold text-white">${plan.price}</span> <span class="ml-2 text-sm text-white/40">MXN</span> </div> <p class="mt-5 min-h-14 leading-7 text-white/55"> ${plan.description} </p> <div class="my-7 h-px bg-white/10"></div> <ul class="space-y-4"> ${plan.features.map((feature) => renderTemplate`<li class="flex items-start gap-3 text-sm text-white/70"> <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#E7D117] text-xs font-bold text-[#0E1620]" aria-hidden="true">
 ✓
 </span> ${feature} </li>`)} </ul> <a href="/contacto/"${addAttribute([
     "mt-8 inline-flex justify-center rounded-full px-6 py-3 font-semibold transition",
     plan.featured ? "bg-[#E7D117] text-[#0E1620] hover:bg-[#F3DE4A]" : "border border-white/20 text-white hover:border-[#E7D117] hover:text-[#E7D117]"
-  ], "class:list")}>
+  ], "class:list")} aria-labelledby="pricing-title">
 Solicitar cotización
 </a> </article>`)} </div> <!-- Extras --> <div class="mt-10 rounded-3xl border border-white/10 bg-[#19232F] p-8 md:p-10"> <div class="grid gap-8 md:grid-cols-2"> <div> <p class="text-sm font-medium text-[#E7D117]">
 Servicios adicionales
-</p> <h3 class="mt-2 text-2xl font-bold">
-Personaliza tu proyecto
-</h3> <p class="mt-3 max-w-xl leading-7 text-white/50">
-Si necesitas algo que no esté incluido en el servicio base,
-            podemos añadirlo a tu proyecto.
-</p> </div> <div class="grid gap-4 sm:grid-cols-2"> <div class="rounded-2xl bg-[#0E1620] p-5"> <p class="text-sm text-white/40">
-Página adicional
-</p> <p class="mt-1 text-xl font-bold">
-$400 MXN
-</p> </div> <div class="rounded-2xl bg-[#0E1620] p-5"> <p class="text-sm text-white/40">
-Producto adicional
-</p> <p class="mt-1 text-xl font-bold">
-$50 MXN
-</p> </div> <div class="rounded-2xl bg-[#0E1620] p-5"> <p class="text-sm text-white/40">
-Funcionalidad personalizada
-</p> <p class="mt-1 text-xl font-bold">
-Desde $1,000 MXN
-</p> </div> <div class="rounded-2xl bg-[#0E1620] p-5"> <p class="text-sm text-white/40">
-Mantenimiento
-</p> <p class="mt-1 text-xl font-bold">
-Desde $500/mes
-</p> </div> </div> </div> </div> <!-- Condiciones --> <div class="mt-8 text-center text-sm text-white/40"> <p>
-50% para iniciar el proyecto · 50% antes de publicar
-</p> <p class="mt-2">
-Hosting + dominio durante el primer año: $600 MXN
-        · Renovación: $900 MXN/año
+</p> <h3 class="mt-2 text-2xl font-bold">Personaliza tu proyecto</h3> <p class="mt-3 max-w-xl leading-7 text-white/50">
+Si necesitas algo que no esté incluido en el servicio base, podemos
+            añadirlo a tu proyecto.
+</p> </div> <div class="grid gap-4 sm:grid-cols-2"> <div class="rounded-2xl bg-[#0E1620] p-5"> <p class="text-sm text-white/40">Página adicional</p> <p class="mt-1 text-xl font-bold">$400 MXN</p> </div> <div class="rounded-2xl bg-[#0E1620] p-5"> <p class="text-sm text-white/40">Producto adicional</p> <p class="mt-1 text-xl font-bold">$50 MXN</p> </div> <div class="rounded-2xl bg-[#0E1620] p-5"> <p class="text-sm text-white/40">Funcionalidad personalizada</p> <p class="mt-1 text-xl font-bold">Desde $1,000 MXN</p> </div> <div class="rounded-2xl bg-[#0E1620] p-5"> <p class="text-sm text-white/40">Mantenimiento</p> <p class="mt-1 text-xl font-bold">Desde $500/mes</p> </div> </div> </div> </div> <!-- Condiciones --> <div class="mt-8 text-center text-sm text-white/40"> <p>50% para iniciar el proyecto · 50% antes de publicar</p> <p class="mt-2">
+Hosting + dominio durante el primer año: $600 MXN · Renovación: $900
+        MXN/año
 </p> </div> </div> </section>`;
 }, "C:/Users/herna/OneDrive/Documents/creadorweb/_negocio/ElCreadorWeb/src/components/home/Pricing.astro", void 0);
 
 const $$Contact = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${maybeRenderHead()}<section id="contacto" class="bg-[#FAFBFC] py-24 text-[#0E1620]"> <div class="mx-auto max-w-7xl px-6"> <div class="overflow-hidden rounded-[2rem] bg-[#0E1620] text-white"> <div class="grid lg:grid-cols-2"> <!-- Información --> <div class="p-8 md:p-12 lg:p-16"> <span class="inline-flex rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm font-medium text-[#F5E98A]">
+  return renderTemplate`${maybeRenderHead()}<section id="contacto" aria-labelledby="contacto-title" class="bg-[#FAFBFC] py-24 text-[#0E1620]"> <div class="mx-auto max-w-7xl px-6"> <div class="overflow-hidden rounded-[2rem] bg-[#0E1620] text-white"> <div class="grid lg:grid-cols-2"> <!-- Información --> <div class="p-8 md:p-12 lg:p-16"> <span class="inline-flex rounded-full border border-[#E7D117]/30 bg-[#E7D117]/5 px-4 py-2 text-sm font-medium text-[#F5E98A]">
 Hablemos
-</span> <h2 class="mt-6 max-w-xl text-4xl font-bold tracking-tight md:text-5xl">
+</span> <h2 id="contacto-title" class="mt-6 max-w-xl text-4xl font-bold tracking-tight md:text-5xl">
 ¿Tienes un proyecto
 <span class="text-[#E7D117]"> en mente?</span> </h2> <p class="mt-6 max-w-lg text-lg leading-8 text-white/55">
-Cuéntame qué necesitas y te ayudaré a encontrar la solución
-            adecuada para tu negocio.
+Cuéntame qué necesitas y te ayudaré a encontrar la
+                        solución adecuada para tu negocio.
 </p> <!-- Beneficios --> <div class="mt-10 space-y-5"> <div class="flex gap-4"> <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E7D117] text-[#0E1620]">
 ✓
-</span> <div> <h3 class="font-semibold">
-Presupuesto claro
-</h3> <p class="mt-1 text-sm leading-6 text-white/45">
-Conocerás el alcance y la inversión antes de comenzar.
+</span> <div> <h3 class="font-semibold">Presupuesto claro</h3> <p class="mt-1 text-sm leading-6 text-white/45">
+Conocerás el alcance y la inversión antes de
+                                    comenzar.
 </p> </div> </div> <div class="flex gap-4"> <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E7D117] text-[#0E1620]">
 ✓
 </span> <div> <h3 class="font-semibold">
 Comunicación directa
 </h3> <p class="mt-1 text-sm leading-6 text-white/45">
-Comunicación sencilla durante todo el proyecto.
+Comunicación sencilla durante todo el
+                                    proyecto.
 </p> </div> </div> <div class="flex gap-4"> <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E7D117] text-[#0E1620]">
 ✓
 </span> <div> <h3 class="font-semibold">
 Soluciones a medida
 </h3> <p class="mt-1 text-sm leading-6 text-white/45">
-El proyecto se adapta a las necesidades reales de tu negocio.
+El proyecto se adapta a las necesidades
+                                    reales de tu negocio.
 </p> </div> </div> </div> </div> <!-- Formulario --> <div class="bg-[#19232F] p-8 md:p-12 lg:p-16"> <form action="#" method="POST" class="space-y-6"> <div> <label for="name" class="mb-2 block text-sm font-medium text-white">
 Nombre
 </label> <input id="name" name="name" type="text" autocomplete="name" required placeholder="Tu nombre" class="w-full rounded-xl border border-white/10 bg-[#0E1620] px-4 py-3.5 text-white outline-none placeholder:text-white/25 focus:border-[#E7D117]"> </div> <div> <label for="email" class="mb-2 block text-sm font-medium text-white">
 Correo electrónico
 </label> <input id="email" name="email" type="email" autocomplete="email" required placeholder="tu@email.com" class="w-full rounded-xl border border-white/10 bg-[#0E1620] px-4 py-3.5 text-white outline-none placeholder:text-white/25 focus:border-[#E7D117]"> </div> <div> <label for="service" class="mb-2 block text-sm font-medium text-white">
 ¿Qué necesitas?
-</label> <select id="service" name="service" class="w-full rounded-xl border border-white/10 bg-[#0E1620] px-4 py-3.5 text-white outline-none focus:border-[#E7D117]"> <option value="">Selecciona una opción</option> <option value="landing-page">Landing Page</option> <option value="sitio-corporativo">Sitio Corporativo</option> <option value="ecommerce">Ecommerce</option> <option value="otro">Otro proyecto</option> </select> </div> <div> <label for="message" class="mb-2 block text-sm font-medium text-white">
+</label> <div class="relative"> <select id="service" name="service" class="w-full appearance-none rounded-xl border border-white/10 bg-[#0E1620] px-4 py-3.5 pr-10 text-white outline-none focus:border-[#E7D117]"> <option value="">Selecciona una opción</option> <option value="landing-page">Landing Page</option> <option value="sitio-corporativo">Sitio Corporativo</option> <option value="ecommerce">Ecommerce</option> <option value="otro">Otro proyecto</option> </select> <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 h-4 w-4 text-white/50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"> <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"></path> </svg> </div> </div> <div> <label for="message" class="mb-2 block text-sm font-medium text-white">
 Cuéntame sobre tu proyecto
 </label> <textarea id="message" name="message" rows="5" required placeholder="¿Qué quieres crear o mejorar?" class="w-full resize-none rounded-xl border border-white/10 bg-[#0E1620] px-4 py-3.5 text-white outline-none placeholder:text-white/25 focus:border-[#E7D117]"></textarea> </div> <button type="submit" class="w-full rounded-full bg-[#E7D117] px-6 py-4 font-semibold text-[#0E1620] transition hover:bg-[#F3DE4A]">
 Solicitar cotización
@@ -368,44 +322,8 @@ aviso de privacidad
 </p> </form> </div> </div> </div> </div> </section>`;
 }, "C:/Users/herna/OneDrive/Documents/creadorweb/_negocio/ElCreadorWeb/src/components/home/Contact.astro", void 0);
 
-const $$Footer = createComponent(($$result, $$props, $$slots) => {
-  const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
-  return renderTemplate`${maybeRenderHead()}<footer class="border-t border-white/10 bg-[#0E1620]"> <div class="mx-auto max-w-7xl px-6 py-12"> <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4"> <!-- Marca --> <div class="lg:col-span-2"> <a href="/" class="text-xl font-bold tracking-tight">
-El Creador
-<span class="text-[#E7D117]">Web</span> </a> <p class="mt-4 max-w-md leading-7 text-white/45">
-Diseño y desarrollo web para negocios que quieren construir
-          una presencia digital profesional.
-</p> </div> <!-- Navegación --> <div> <h2 class="text-sm font-semibold text-white">
-Navegación
-</h2> <nav class="mt-4 flex flex-col gap-3 text-sm text-white/45"> <a href="/#servicios" class="transition hover:text-[#E7D117]">
-Servicios
-</a> <a href="/proyectos/" class="transition hover:text-[#E7D117]">
-Proyectos
-</a> <a href="/blog/" class="transition hover:text-[#E7D117]">
-Blog
-</a> <a href="/sobre-mi/" class="transition hover:text-[#E7D117]">
-Sobre mí
-</a> <a href="/contacto/" class="transition hover:text-[#E7D117]">
-Contacto
-</a> </nav> </div> <!-- Información --> <div> <h2 class="text-sm font-semibold text-white">
-Información
-</h2> <nav class="mt-4 flex flex-col gap-3 text-sm text-white/45"> <a href="/aviso-privacidad/" class="transition hover:text-[#E7D117]">
-Aviso de privacidad
-</a> <a href="/#contacto" class="transition hover:text-[#E7D117]">
-Solicitar cotización
-</a> </nav> </div> </div> <!-- Separador --> <div class="my-10 h-px bg-white/10"></div> <!-- Bottom --> <div class="flex flex-col gap-5 text-sm text-white/35 md:flex-row md:items-center md:justify-between"> <p>
-© ${currentYear} El Creador Web. Todos los derechos reservados.
-</p> <div class="flex items-center gap-5"> <a href="#" aria-label="Instagram" class="transition hover:text-[#E7D117]">
-Instagram
-</a> <a href="#" aria-label="LinkedIn" class="transition hover:text-[#E7D117]">
-LinkedIn
-</a> <a href="#" aria-label="YouTube" class="transition hover:text-[#E7D117]">
-YouTube
-</a> </div> </div> </div> </footer>`;
-}, "C:/Users/herna/OneDrive/Documents/creadorweb/_negocio/ElCreadorWeb/src/components/Footer.astro", void 0);
-
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, {}, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Header", $$Header, {})} ${maybeRenderHead()}<main> ${renderComponent($$result2, "Hero", $$Hero, {})} ${renderComponent($$result2, "Services", $$Services, {})} ${renderComponent($$result2, "Portfolio", $$Portfolio, {})} ${renderComponent($$result2, "Testimonials", $$Testimonials, {})} ${renderComponent($$result2, "FAQ", $$FAQ, {})} ${renderComponent($$result2, "Pricing", $$Pricing, {})} ${renderComponent($$result2, "Contact", $$Contact, {})} </main> ${renderComponent($$result2, "Footer", $$Footer, {})} ` })}`;
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "El Creador Web \xB7 Dise\xF1o y Desarrollo Web en M\xE9xico", "description": "Dise\xF1o y desarrollo de landing pages, sitios corporativos y tiendas online para negocios que quieren crecer en internet.", "canonical": "/" }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "Header", $$Header, {})} ${maybeRenderHead()}<main> ${renderComponent($$result2, "Hero", $$Hero, {})} ${renderComponent($$result2, "Services", $$Services, {})} ${renderComponent($$result2, "Portfolio", $$Portfolio, {})} ${renderComponent($$result2, "Testimonials", $$Testimonials, {})} ${renderComponent($$result2, "FAQ", $$FAQ, {})} ${renderComponent($$result2, "Pricing", $$Pricing, {})} ${renderComponent($$result2, "Contact", $$Contact, {})} </main> ${renderComponent($$result2, "Footer", $$Footer, {})} ` })}`;
 }, "C:/Users/herna/OneDrive/Documents/creadorweb/_negocio/ElCreadorWeb/src/pages/index.astro", void 0);
 
 const $$file = "C:/Users/herna/OneDrive/Documents/creadorweb/_negocio/ElCreadorWeb/src/pages/index.astro";
