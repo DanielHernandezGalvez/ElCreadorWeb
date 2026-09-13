@@ -49,3 +49,4 @@ Astro + TypeScript + Tailwind
             │
             ▼
         Hostinger
+        
