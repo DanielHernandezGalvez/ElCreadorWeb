@@ -8,7 +8,7 @@
     class="bg-[#FAFBFC] py-24 text-[#0E1620]"
 >
     <div class="mx-auto max-w-7xl px-6">
-        <div class="overflow-hidden rounded-[2rem] bg-[#0E1620] text-white">
+        <div class="overflow-hidden rounded-4xl bg-[#0E1620] text-white">
             <div class="grid lg:grid-cols-2">
                 <!-- Información -->
                 <div class="p-8 md:p-12 lg:p-16">
@@ -92,7 +92,7 @@
 
                 <!-- Formulario -->
                 <div class="bg-[#19232F] p-8 md:p-12 lg:p-16">
-                    <form action="#" method="POST" class="space-y-6">
+                    <form id="contact-component-form" action="#" method="POST" class="space-y-6">
                         <div>
                             <label
                                 for="name"
@@ -190,7 +190,14 @@
                             ></textarea>
                         </div>
 
+                        <!-- Honeypot field (bots will fill this) -->
+                        <input type="text" name="website" placeholder="Website" style="display:none" tabindex="-1" autocomplete="off" />
+
+                        <!-- Timestamp -->
+                        <input type="hidden" name="ts" id="contact-ts" />
+
                         <button
+                            id="contact-submit"
                             type="submit"
                             class="w-full rounded-full bg-[#E7D117] px-6 py-4 font-semibold text-[#0E1620] transition hover:bg-[#F3DE4A]"
                         >
@@ -207,6 +214,53 @@
                             </a>.
                         </p>
                     </form>
+
+                    <script>
+                        (function(){
+                            const formEl = document.getElementById('contact-component-form');
+                            const submitEl = document.getElementById('contact-submit');
+                            const tsEl = document.getElementById('contact-ts');
+
+                            if (tsEl instanceof HTMLInputElement) tsEl.value = String(Date.now());
+
+                            if (!(formEl instanceof HTMLFormElement)) return;
+
+                            formEl.addEventListener('submit', async (e) => {
+                                e.preventDefault();
+                                if (submitEl instanceof HTMLButtonElement) submitEl.disabled = true;
+
+                                const data = Object.fromEntries(new FormData(formEl));
+
+                                try {
+                                    const res = await fetch('/api/contact', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/json' },
+                                        body: JSON.stringify({
+                                            name: data.name,
+                                            email: data.email,
+                                            subject: data.service || data.subject || '',
+                                            message: data.message,
+                                            website: data.website || '',
+                                            ts: data.ts,
+                                        }),
+                                    });
+
+                                    const json = await res.json().catch(() => ({}));
+                                    if (res.ok) {
+                                        alert('Mensaje enviado. Gracias!');
+                                        formEl.reset();
+                                    } else {
+                                        alert(json?.error || 'Error al enviar');
+                                    }
+                                } catch (err) {
+                                    alert('Error de red. Intenta más tarde.');
+                                } finally {
+                                    if (submitEl instanceof HTMLButtonElement) submitEl.disabled = false;
+                                    if (tsEl instanceof HTMLInputElement) tsEl.value = String(Date.now());
+                                }
+                            });
+                        })();
+                    </script>
                 </div>
             </div>
         </div>
