@@ -40,7 +40,7 @@ if ($name === '' || $email === '' || $message === '') {
 
 $resendApiKey = getenv('RESEND_API_KEY');
 $mailTo = getenv('MAIL_TO') ?: 'hernandezgalvezalejandro@gmail.com';
-$mailFrom = getenv('MAIL_FROM') ?: 'contacto@elcreadorweb.com';
+$mailFrom = getenv('MAIL_FROM') ?: 'onboarding@resend.dev';
 
 // Fallback: if env var not set, try to read a local .env file in the same folder
 if (!$resendApiKey) {
