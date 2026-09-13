@@ -42,6 +42,27 @@ $resendApiKey = getenv('RESEND_API_KEY');
 $mailTo = getenv('MAIL_TO') ?: 'hernandezgalvezalejandro@gmail.com';
 $mailFrom = getenv('MAIL_FROM') ?: 'contacto@elcreadorweb.com';
 
+// Fallback: if env var not set, try to read a local .env file in the same folder
+if (!$resendApiKey) {
+    $envFile = __DIR__ . '/.env';
+    if (is_readable($envFile)) {
+        $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($lines as $line) {
+            if (strpos(trim($line), '#') === 0) continue;
+            [$k, $v] = array_map('trim', explode('=', $line, 2) + [1 => '']);
+            if ($k === 'RESEND_API_KEY' && $v !== '') {
+                $resendApiKey = $v;
+            }
+            if ($k === 'MAIL_TO' && ($mailTo === '' || $mailTo === null)) {
+                $mailTo = $v;
+            }
+            if ($k === 'MAIL_FROM' && ($mailFrom === '' || $mailFrom === null)) {
+                $mailFrom = $v;
+            }
+        }
+    }
+}
+
 if (!$resendApiKey) {
     http_response_code(500);
     echo json_encode(['error' => 'Server misconfiguration: missing RESEND_API_KEY']);
@@ -91,16 +112,26 @@ if ($resp === false) {
     $curlErr = $err['message'] ?? 'Unknown error';
 }
 
+// Log any provider errors for debugging (file: public/backend/contact.log)
+function log_provider_error($info) {
+    $logFile = __DIR__ . '/contact.log';
+    $entry = '[' . date('c') . '] ' . $info . PHP_EOL;
+    @file_put_contents($logFile, $entry, FILE_APPEND | LOCK_EX);
+}
+
 if ($resp === false) {
+    log_provider_error('request-failed: ' . ($curlErr ?? 'unknown'));
     http_response_code(502);
     echo json_encode(['error' => 'Email provider error', 'detail' => $curlErr]);
     exit;
 }
 
 if ($httpCode < 200 || $httpCode >= 300) {
-    http_response_code(502);
     $decoded = json_decode($resp, true);
-    echo json_encode(['error' => 'Email provider error', 'detail' => $decoded ?? $resp]);
+    $detail = $decoded ?? $resp;
+    log_provider_error('provider-response code=' . $httpCode . ' body=' . (is_string($resp) ? $resp : json_encode($resp)));
+    http_response_code(502);
+    echo json_encode(['error' => 'Email provider error', 'detail' => $detail]);
     exit;
 }
 
