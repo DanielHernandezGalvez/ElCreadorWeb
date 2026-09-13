@@ -42,6 +42,27 @@ $resendApiKey = getenv('RESEND_API_KEY');
 $mailTo = getenv('MAIL_TO') ?: 'hernandezgalvezalejandro@gmail.com';
 $mailFrom = getenv('MAIL_FROM') ?: 'contacto@elcreadorweb.com';
 
+// Fallback: if env var not set, try to read a local .env file in the same folder
+if (!$resendApiKey) {
+    $envFile = __DIR__ . '/.env';
+    if (is_readable($envFile)) {
+        $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($lines as $line) {
+            if (strpos(trim($line), '#') === 0) continue;
+            [$k, $v] = array_map('trim', explode('=', $line, 2) + [1 => '']);
+            if ($k === 'RESEND_API_KEY' && $v !== '') {
+                $resendApiKey = $v;
+            }
+            if ($k === 'MAIL_TO' && ($mailTo === '' || $mailTo === null)) {
+                $mailTo = $v;
+            }
+            if ($k === 'MAIL_FROM' && ($mailFrom === '' || $mailFrom === null)) {
+                $mailFrom = $v;
+            }
+        }
+    }
+}
+
 if (!$resendApiKey) {
     http_response_code(500);
     echo json_encode(['error' => 'Server misconfiguration: missing RESEND_API_KEY']);
