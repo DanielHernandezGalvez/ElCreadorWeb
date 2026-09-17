@@ -1,0 +1,122 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const portfolioLinks = [
+  {
+    name: "Mundi Flor",
+    url: "https://mundiflor.com/",
+    description: "Sitio web de marca y catálogo digital.",
+  },
+  {
+    name: "Kurajiyu Matcha",
+    url: "https://kurajiyumatcha.com/",
+    description: "Landing page enfocada en producto y conversión.",
+  },
+  {
+    name: "Rashidi",
+    url: "https://rashidigdl.com/",
+    description: "Tienda y presencia digital para marca de moda.",
+  },
+  {
+    name: "Agencia Colibrí Errante",
+    url: "https://agenciacolibrierrante.com/",
+    description: "Web corporativa para servicios creativos.",
+  },
+  {
+    name: "Cellumind",
+    url: "https://www.cellumind.mx/",
+    description: "Proyecto web orientado a servicios y confianza.",
+  },
+  {
+    name: "Pedma Stone",
+    url: "https://pedmastone.com/",
+    description: "Sitio comercial con enfoque en presentación visual.",
+  },
+  {
+    name: "Barranquilla 2964",
+    url: "https://barranquilla2964.com/",
+    description: "Sitio web para inmueble o desarrollo inmobiliario.",
+  },
+];
+---
+
+<BaseLayout
+  title="Portafolio | El Creador Web"
+  description="Portafolio tipo linktree con acceso rápido a los proyectos y sitios web desarrollados por El Creador Web."
+  canonical="/portafolio/"
+>
+  <Header />
+
+  <main class="pt-28">
+    <section class="relative overflow-hidden px-6 py-20">
+      <div class="absolute inset-0 opacity-70" aria-hidden="true">
+        <div
+          class="absolute inset-0"
+          style="background-image: radial-gradient(circle at top, rgba(231,209,23,0.16), transparent 38%), linear-gradient(180deg, rgba(14,22,32,0.7), rgba(14,22,32,0.95));"
+        ></div>
+        <div class="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-[#E7D117]/10 blur-3xl"></div>
+      </div>
+
+      <div class="relative mx-auto flex w-full max-w-3xl flex-col items-center text-center">
+       
+
+        
+
+        <h1 class="mt-8 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+          Proyectos 
+          <span class="text-[#E7D117]"> Realizados </span>
+        </h1>
+
+        <p class="mt-5 max-w-2xl text-base leading-8 text-white/65 sm:text-lg">
+          Una vista rápida de algunos sitios web y portafolios desarrollados para distintos negocios.
+        </p>
+
+        <div class="mt-10 w-full">
+          <div class="grid gap-4">
+            {portfolioLinks.map((project) => (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex items-center justify-between gap-4 rounded-3xl border border-white/10 bg-white/5 px-5 py-4 text-left transition duration-300 hover:-translate-y-0.5 hover:border-[#E7D117]/40 hover:bg-white/10"
+              >
+                <div>
+                  <p class="text-lg font-semibold text-white transition group-hover:text-[#F5E98A]">
+                    {project.name}
+                  </p>
+                  <p class="mt-1 text-sm leading-6 text-white/55">
+                    {project.description}
+                  </p>
+                </div>
+
+                <span class="shrink-0 rounded-full border border-white/10 px-3 py-1.5 text-sm text-white/70 transition group-hover:border-[#E7D117]/40 group-hover:text-[#F5E98A]">
+                  Abrir
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+            <!-- <a
+              href="/contacto/"
+              class="rounded-full bg-[#E7D117] px-6 py-3 text-sm font-semibold text-[#0E1620] transition hover:bg-[#F3DE4A]"
+            >
+              Solicitar presupuesto
+            </a>
+
+            <a
+              href="/proyectos/"
+              class="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white/85 transition hover:border-[#E7D117]/40 hover:text-[#F5E98A]"
+            >
+              Ver proyectos
+            </a> -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<BaseLayout
+	title="Aviso de Privacidad | El Creador Web"
+	description="Aviso de privacidad básico de El Creador Web para el sitio elcreadorweb.com."
+	canonical="/aviso-privacidad/"
+	noindex={true}
+>
+	<Header />
+
+	<main class="pt-28">
+		<section class="bg-[#0E1620] px-6 py-16 text-white">
+			<div class="mx-auto max-w-4xl">
+				<p class="text-sm font-medium uppercase tracking-[0.25em] text-[#E7D117]">
+					Aviso de privacidad
+				</p>
+
+				<h1 class="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
+					Protección de datos personales
+				</h1>
+
+				<p class="mt-6 text-lg leading-8 text-white/70">
+					En <span class="font-semibold text-white">El Creador Web</span>, con sitio web oficial
+					<a href="https://elcreadorweb.com" class="text-[#E7D117] underline decoration-[#E7D117]/40 underline-offset-4">
+						elcreadorweb.com
+					</a>,
+					somos responsables del tratamiento de los datos personales que nos compartes a través de nuestros formularios,
+					correo electrónico o cualquier otro medio de contacto.
+				</p>
+
+				<div class="mt-10 space-y-8 text-white/70">
+					<section>
+						<h2 class="text-2xl font-semibold text-white">Datos que podemos recabar</h2>
+						<p class="mt-3 leading-8">
+							Nombre, correo electrónico, teléfono, nombre de tu negocio, información sobre tu proyecto y cualquier otro
+							dato que decidas compartir para solicitar información o una cotización.
+						</p>
+					</section>
+
+					<section>
+						<h2 class="text-2xl font-semibold text-white">Finalidades del tratamiento</h2>
+						<p class="mt-3 leading-8">
+							Usamos tus datos para responder mensajes, brindar información sobre servicios, dar seguimiento a solicitudes,
+							elaborar propuestas, prestar servicios contratados y mantener comunicación relacionada con tu proyecto.
+						</p>
+					</section>
+
+					<section>
+						<h2 class="text-2xl font-semibold text-white">Transferencia de datos</h2>
+						<p class="mt-3 leading-8">
+							No compartimos tus datos personales con terceros, salvo cuando sea necesario para cumplir obligaciones legales
+							o para atender servicios relacionados con tu proyecto y siempre bajo medidas razonables de confidencialidad.
+						</p>
+					</section>
+
+					<section>
+						<h2 class="text-2xl font-semibold text-white">Derechos sobre tus datos</h2>
+						<p class="mt-3 leading-8">
+							Puedes solicitar acceso, rectificación, cancelación u oposición al uso de tus datos personales enviando un correo
+							a <a href="mailto:contacto@elcreadorweb.com" class="text-[#E7D117] underline decoration-[#E7D117]/40 underline-offset-4">contacto@elcreadorweb.com</a>.
+							También puedes pedir que dejemos de enviarte información promocional en cualquier momento.
+						</p>
+					</section>
+
+					<section>
+						<h2 class="text-2xl font-semibold text-white">Medios de contacto</h2>
+						<p class="mt-3 leading-8">
+							Para cualquier duda sobre este aviso de privacidad o sobre el tratamiento de tus datos, escríbenos a
+							<a href="mailto:contacto@elcreadorweb.com" class="text-[#E7D117] underline decoration-[#E7D117]/40 underline-offset-4">contacto@elcreadorweb.com</a>.
+						</p>
+					</section>
+
+					<section>
+						<h2 class="text-2xl font-semibold text-white">Cambios a este aviso</h2>
+						<p class="mt-3 leading-8">
+							Este aviso puede actualizarse en cualquier momento para reflejar cambios en nuestros procesos o en la normativa
+							aplicable. La versión vigente estará disponible en esta misma página.
+						</p>
+					</section>
+
+					<p class="pt-4 text-sm text-white/45">
+						Última actualización: septiembre de 2026.
+					</p>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+</BaseLayout>
