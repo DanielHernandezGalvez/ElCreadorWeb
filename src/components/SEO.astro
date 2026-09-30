@@ -15,7 +15,7 @@ const {
   noindex = false,
 } = Astro.props;
 
-const siteUrl = "https://elcreadorweb.mx";
+const siteUrl = "https://elcreadorweb.com";
 const canonicalUrl = canonical
   ? new URL(canonical, siteUrl).toString()
   : new URL(Astro.url.pathname, siteUrl).toString();
