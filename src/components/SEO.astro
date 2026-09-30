@@ -21,6 +21,42 @@ const canonicalUrl = canonical
   : new URL(Astro.url.pathname, siteUrl).toString();
 
 const imageUrl = new URL(image, siteUrl).toString();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "El Creador Web",
+  url: siteUrl,
+  description:
+    "Diseño y desarrollo de landing pages, sitios corporativos y tiendas online para negocios que quieren crecer en internet.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Zapopan",
+    addressRegion: "Jalisco",
+    addressCountry: "MX",
+  },
+  areaServed: [
+    { "@type": "Country", name: "México" },
+    { "@type": "City", name: "Zapopan" },
+    { "@type": "City", name: "Guadalajara" },
+    {
+      "@type": "AdministrativeArea",
+      name: "Zona Metropolitana de Guadalajara",
+    },
+  ],
+  serviceType: [
+    "Diseño y desarrollo web",
+    "Landing pages",
+    "Tiendas online",
+    "Sitios web corporativos",
+  ],
+  sameAs: [
+    "https://www.instagram.com/elcreadorweb/",
+    "https://www.linkedin.com/company/el-creador-web/",
+    "https://www.youtube.com/@ElCreadorWeb",
+    "https://www.tiktok.com/@elcreadorweb",
+  ],
+};
 ---
 
 <meta charset="UTF-8" />
@@ -49,3 +85,5 @@ const imageUrl = new URL(image, siteUrl).toString();
 <meta name="twitter:image" content={imageUrl} />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
